@@ -1,13 +1,12 @@
-const Controller = require('./Controller.js');  
-const PessoaService = require('../services/PessoaService.js');
+const Controller = require('./Controller.js');
+const PessoaServices = require('../services/PessoaServices.js');
 
-const pessoaService = new PessoaService();
-class PessoaController extends Controller{
+const pessoaServices = new PessoaServices();
 
-  constructor(){
-    super(pessoaService);
+class PessoaController extends Controller {
+  constructor() {
+    super(pessoaServices);
   }
 }
 
-
-module.exports = PessoaController
+module.exports = PessoaController;
