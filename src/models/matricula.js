@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      Matricula.belongsTo(models.Curso, {foreignKey: 'curso_id'});
+      Matricula.belongsTo(models.Pessoa, {foreignKey: 'estudante_id'});
       // define association here
     }
   }
@@ -18,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Matricula',
+    tableName: 'Matriculas'
   });
   return Matricula;
 };
