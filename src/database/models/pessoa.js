@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
         scope: { status : 'matriculado' },
         as: 'aulasmatriculas'
       });
+      Pessoa.hasMany(models.Matricula, {foreignKey: 'estudante_id',
+        as: 'todasMatriculas'
+      });
       // define association here
     }
   }

@@ -12,25 +12,35 @@ class Controller {
     }
   }
 
-  // async pegaUmPorId(req, res) {
-  //   const { id } = req.params;
-  //   try {
-  //     const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
-  //     return res.status(200).json(umRegistro);
-  //   } catch (erro) {
-  //     return res.status(500).json({ erro: erro.message });
-  //   }
-  // }
+   async pegaUmPorId(req, res) {
+    const { id } = req.params;
+    try {
+      const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
+       return res.status(200).json(umRegistro);
+     } catch (erro) {
+       return res.status(500).json({ erro: erro.message });
+     }
+ }
 
-  // async criaNovo(req, res) {
-  //   const dadosParaCriacao = req.body;
-  //   try {
-  //     const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
-  //     return res.status(200).json(novoRegistroCriado);
-  //   } catch (erro) {
-  //     // erro
-  //   }
-  // }
+    async pegaUm(req, res) {
+    const { ...params } = req.params;
+    try {
+      const umRegistro = await this.entidadeService.pegaUmRegistrod(params);
+       return res.status(200).json(umRegistro);
+     } catch (erro) {
+       return res.status(500).json({ erro: erro.message });
+     }
+ }
+
+   async criaNovo(req, res) {
+     const dadosParaCriacao = req.body;
+     try {
+       const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
+       return res.status(200).json(novoRegistroCriado);
+     } catch (erro) {
+        erro
+   }
+ }
 
   async atualiza(req, res) {
     const { id } = req.params;
