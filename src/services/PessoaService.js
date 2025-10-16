@@ -9,6 +9,13 @@ class PessoaService extends Services{
         const estudante = await this.pegaUmRegistroPorId(id);
         const listarMatriculas = await estudante.getAulasMatriculadas();
         return listarMatriculas;
-      }
+    }
+
+    async pegaPessoasEscopoTodos (){
+        const listaPessoas = await super.pegaRegistrosPorEscopo('todosOsRegistros');
+        return listaPessoas;
+    }
+
+
 };
 module.exports = PessoaService;
