@@ -8,7 +8,7 @@ class Controller {
       const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
       return res.status(200).json(listaDeRegistro);
     } catch (erro) {
-      // erro
+      return res.status(500).json({ erro: erro.message });
     }
   }
 
@@ -18,7 +18,7 @@ class Controller {
   //     const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
   //     return res.status(200).json(umRegistro);
   //   } catch (erro) {
-  //     // erro
+  //     return res.status(500).json({ erro: erro.message });
   //   }
   // }
 
