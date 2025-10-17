@@ -5,4 +5,4 @@ class CategoriaServices extends Services{
         super('Pessoa');
     }
 };
-module.exports = CategoriaServicesategoriaServices;
+module.exports = CategoriaServices;

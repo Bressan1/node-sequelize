@@ -1,4 +1,4 @@
-const dataSource = require('../database/models');
+const dataSource = require('../database/models/index.js');
 const Services = require('./Services.js');
 
 class PessoaServices extends Services {
